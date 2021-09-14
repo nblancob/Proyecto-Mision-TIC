@@ -8,7 +8,7 @@ Aplicación web que permitirá controlar las ventas físicas y virtuales de una 
 | Juan Miguel Isaza Moreno         | [capitanisaza](https://github.com/capitanisaza)           | Desarrollador  |
 | Nicolás Fernando Blanco Blanco   |      [nblancob](https://github.com/nblancob)              | Desarrollador  |
 | Leidy Johana Quintero            |          [leidy]()                                        | Scrum Master   |
-| Cristhian David Roncancio        |         [crisdaid](https://github.com/crisdaid)           |Product Manager |
+| Cristhian David Roncancio        |         [crisdaid](https://github.com/Cdavid111)          |Product Manager |
 | Jeovanis Herrera Pertuz          |   [jeovanis]()                                            | Desarrollador  |
 
 ## Requisitos 👓:
