@@ -29,3 +29,6 @@ Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://devel
 
 ### Nicolás Fernando Blanco Blanco: 🐲
 Estudiante de ingeniería civil de la universidad Nacional de Colombia, amante de los deportes como el futbol ⚽, la natación 🏊 y el ciclismo 🚴‍♂️, interesado por la programación y el desarrollo de software, que tiene como objetivo seguir aprendiendo para poder aplicar estos conocimientos en el campo de la ingeniería civil 🏗️, particularmente atraído por el mundo del blockchain, la inteligencia artificial y el big data.
+
+### Cristhian David Roncancio Alfonso 🚀
+Soy estudiante de Ingeniería de Sistemas de la Universidad Nacional de Colombia, aspirante a Ingeniería Aeroespacial en la Universidad de Antioquia y en formación en el programa MisionTic2022. Busco tener una proyección innovadora que preste soluciones tecnologícas orientadas a las áreas científicas, que pueden contribuir al desarrollo de mi país. Me gusta también dedicar buen tiempo al desarrollo de software, los idiomas y tengo presente que estar aprendiendo constantemente permite ser competente ante los requerimientos profesionales de cada día.
