@@ -9,7 +9,7 @@ Aplicación web que permitirá controlar las ventas físicas y virtuales de una 
 | Nicolás Fernando Blanco Blanco   |      [nblancob](https://github.com/nblancob)              | Desarrollador  |
 | Leidy Johana Quintero            |          [leidy]()                                        | Scrum Master   |
 | Cristhian David Roncancio        |         [crisdaid](https://github.com/Cdavid111)          |Product Manager |
-| Jeovanis Herrera Pertuz          |   [jeovanis]()                                            | Desarrollador  |
+| Jeovanis Herrera Pertuz          |   [jeovanis](https://github.com/JeovanHerrera)            | Desarrollador  |
 
 ## Requisitos 👓:
 Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript), y el stack tecnológico a emplear será:
@@ -36,4 +36,6 @@ Soy estudiante de Ingeniería de Sistemas de la Universidad Nacional de Colombia
 ### Juan Miguel Isaza Moreno: 
 Ingeniero Financiero & Contador Publico de la Universidad de Medellin, cientifico de datos formado en correlation one & Mintic y  un apasionado por las tecnologias de la informacion. Estoy en el curso de desarrollo web buscando crecer en herramientas que me permitan complementar mi formacion en ciencia de datos. Como hobbyes tengo la musica el futbol, y los caballos. Espero aprender mucho, poder desempeñarme como desarrollador web y trabajar en remoto desde cualquier lugar del mundo 
 
+### Jeovanis Herrera Pertuz:
+Entrepreneur working independently as IT Support and sysadmin for SMEs with growth potential, currently managing a network of 50 PCs and workers at six different bussinesses. Looking for a opportunity where I can make a bigger impact, experience working directly with stakeholders, bulding trust and providing solutions. Running and reading are two activities I really enjoy daily.
 
