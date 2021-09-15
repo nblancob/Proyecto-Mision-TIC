@@ -32,3 +32,8 @@ Estudiante de ingeniería civil de la universidad Nacional de Colombia, amante d
 
 ### Cristhian David Roncancio Alfonso 🚀
 Soy estudiante de Ingeniería de Sistemas de la Universidad Nacional de Colombia, aspirante a Ingeniería Aeroespacial en la Universidad de Antioquia y en formación en el programa MisionTic2022. Busco tener una proyección innovadora que preste soluciones tecnologícas orientadas a las áreas científicas, que pueden contribuir al desarrollo de mi país. Me gusta también dedicar buen tiempo al desarrollo de software, los idiomas y tengo presente que estar aprendiendo constantemente permite ser competente ante los requerimientos profesionales de cada día.
+
+### Juan Miguel Isaza Moreno: 
+Ingeniero Financiero & Contador Publico de la Universidad de Medellin, cientifico de datos formado en correlation one & Mintic y  un apasionado por las tecnologias de la informacion. Estoy en el curso de desarrollo web buscando crecer en herramientas que me permitan complementar mi formacion en ciencia de datos. Como hobbyes tengo la musica el futbol, y los caballos. Espero aprender mucho, poder desempeñarme como desarrollador web y trabajar en remoto desde cualquier lugar del mundo 
+
+
