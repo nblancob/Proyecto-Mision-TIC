@@ -57,5 +57,5 @@ Ingeniero Financiero & Contador Publico de la Universidad de Medellin, cientific
 ### Jeovanis Herrera Pertuz:
 Entrepreneur working independently as IT Support and sysadmin for SMEs with growth potential, currently managing a network of 50 PCs and workers at six different bussinesses. Looking for a opportunity where I can make a bigger impact, experience working directly with stakeholders, bulding trust and providing solutions. Running and reading are two activities I really enjoy daily.
 
-### Leidy Johana Quintero: 🧲
+### Leidy Johana Quintero:🌻
 Ingeniera de Materiales egresada de la Universidad de Antioquia, con énfasis en investigación aplicada para la innovación de nuevos productos elaborados a partir de materiales métalicos utilizados en la industria de autopartes para vehículos livianos.  Me he especializo en la caracterización y evaluación de propiedades mecánicas de dichos materiales y en la actualidad, me interesa el aprendizaje de la programación debido a su importancia en la transformación digital del pais, y a su caracter multidisciplinario ya que facilmente se puede integrar este aprendizaje con todas las áreas del conocimiento y así se puede contribuir a la optimización y automatización de diferentes tipos de procesos.
