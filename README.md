@@ -40,8 +40,10 @@ Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://devel
 - [x] Crear el repositorio del proyecto.
 - [x] Compartir el repositorio con los integrantes del grupo.
 - [x] Actualizar el readme.
-- [] Desarrollar la interfaz de login.
-- [] Desarrollar la funcionalidad del login.
+- [] Desarrollo de la interfaz grafica:
+  - [] Desarrollar la interfaz de login.
+  - [] Desarrollar la interefaz de gestión de ventas.
+  - [] Desarrollar la interfaz de gestión de información vendedores y usuarios
 
 ## Descripción de los integrantes 💻:
 
