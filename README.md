@@ -38,8 +38,8 @@ Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://devel
 
 ## Lista de tareas ✔️:
 - [x] Crear el repositorio del proyecto.
-- [] Compartir el repositorio con los integrantes del grupo.
-- [] Actualizar el readme.
+- [x] Compartir el repositorio con los integrantes del grupo.
+- [x] Actualizar el readme.
 - [] Desarrollar la interfaz de login.
 - [] Desarrollar la funcionalidad del login.
 
