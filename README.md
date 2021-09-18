@@ -38,10 +38,12 @@ Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://devel
 
 ## Lista de tareas ✔️:
 - [x] Crear el repositorio del proyecto.
-- [] Compartir el repositorio con los integrantes del grupo.
-- [] Actualizar el readme.
-- [] Desarrollar la interfaz de login.
-- [] Desarrollar la funcionalidad del login.
+- [x] Compartir el repositorio con los integrantes del grupo.
+- [x] Actualizar el readme.
+- [] Desarrollo de la interfaz grafica:
+  - [] Desarrollar la interfaz de login.
+  - [] Desarrollar la interfaz de gestión de ventas.
+  - [] Desarrollar la interfaz de gestión de información vendedores y usuarios
 
 ## Descripción de los integrantes 💻:
 
@@ -59,3 +61,7 @@ Entrepreneur working independently as IT Support and sysadmin for SMEs with grow
 
 ### Leidy Johana Quintero:🌻
 Ingeniera de Materiales egresada de la Universidad de Antioquia, con énfasis en investigación aplicada para la innovación de nuevos productos elaborados a partir de materiales métalicos utilizados en la industria de autopartes para vehículos livianos.  Me he especializo en la caracterización y evaluación de propiedades mecánicas de dichos materiales y en la actualidad, me interesa el aprendizaje de la programación debido a su importancia en la transformación digital del pais, y a su caracter multidisciplinario ya que facilmente se puede integrar este aprendizaje con todas las áreas del conocimiento y así se puede contribuir a la optimización y automatización de diferentes tipos de procesos.
+
+Link [Trello](https://trello.com/invite/b/bYXcx0QB/f506b0bc085d4eacec8389e8b7260077/sprint-1)
+
+
