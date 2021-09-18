@@ -75,6 +75,9 @@ Commmits del Repositorio
 
 Link Repositorio GitHub https://github.com/nblancob/Proyecto-Mision-TIC.git
 
+Pull Request Repositorio
+
+![image](https://user-images.githubusercontent.com/66883967/133898264-77cc2431-8871-48fd-a911-96c04029c6d9.png)
 
 
 Tablero Trello 
