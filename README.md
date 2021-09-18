@@ -25,7 +25,7 @@ Este módulo hará la integración de los demás módulos del sistema para garan
 |----------------------------------|-----------------------------------------------------------|----------------|
 | Juan Miguel Isaza Moreno         | [capitanisaza](https://github.com/capitanisaza)           | Desarrollador  |
 | Nicolás Fernando Blanco Blanco   |      [nblancob](https://github.com/nblancob)              | Desarrollador  |
-| Leidy Johana Quintero            |          [leidy]()                                        | Scrum Master   |
+| Leidy Johana Quintero            |          [leidyjlq]()                                     | Scrum Master   |
 | Cristhian David Roncancio        |         [crisdaid](https://github.com/Cdavid111)          |Product Manager |
 | Jeovanis Herrera Pertuz          |   [jeovanis](https://github.com/JeovanHerrera)            | Desarrollador  |
 
@@ -59,13 +59,9 @@ Ingeniero Financiero & Contador Publico de la Universidad de Medellin, cientific
 ### Jeovanis Herrera Pertuz:
 Entrepreneur working independently as IT Support and sysadmin for SMEs with growth potential, currently managing a network of 50 PCs and workers at six different bussinesses. Looking for a opportunity where I can make a bigger impact, experience working directly with stakeholders, bulding trust and providing solutions. Running and reading are two activities I really enjoy daily.
 
-### Leidy Quintero
-
-
-
-
+### Leidy Johana Quintero:🌻
+Ingeniera de Materiales egresada de la Universidad de Antioquia, con énfasis en investigación aplicada para la innovación de nuevos productos elaborados a partir de materiales métalicos utilizados en la industria de autopartes para vehículos livianos.  Me he especializo en la caracterización y evaluación de propiedades mecánicas de dichos materiales y en la actualidad, me interesa el aprendizaje de la programación debido a su importancia en la transformación digital del pais, y a su caracter multidisciplinario ya que facilmente se puede integrar este aprendizaje con todas las áreas del conocimiento y así se puede contribuir a la optimización y automatización de diferentes tipos de procesos.
 
 Link [Trello](https://trello.com/invite/b/bYXcx0QB/f506b0bc085d4eacec8389e8b7260077/sprint-1)
-
 
 
