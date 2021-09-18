@@ -42,7 +42,7 @@ Para el desarrollo del proyecto se usará el lenguaje [JavaScript](https://devel
 - [x] Actualizar el readme.
 - [] Desarrollo de la interfaz grafica:
   - [] Desarrollar la interfaz de login.
-  - [] Desarrollar la interefaz de gestión de ventas.
+  - [] Desarrollar la interfaz de gestión de ventas.
   - [] Desarrollar la interfaz de gestión de información vendedores y usuarios
 
 ## Descripción de los integrantes 💻:
@@ -65,25 +65,7 @@ Entrepreneur working independently as IT Support and sysadmin for SMEs with grow
 
 
 
-Archivos Repositorio Git HUB
-![image](https://user-images.githubusercontent.com/66883967/133898042-050904ed-f1a3-45bf-9207-bc35b24ce28a.png)
-
-
-
-Commmits del Repositorio
-<img width="767" alt="Commits Repositorio" src="https://user-images.githubusercontent.com/66883967/133898073-ff2efa6c-aa2f-4bf3-9ff8-cc1909e6e19a.PNG">
-
-Link Repositorio GitHub https://github.com/nblancob/Proyecto-Mision-TIC.git
-
-Pull Request Repositorio
-
-![image](https://user-images.githubusercontent.com/66883967/133898264-77cc2431-8871-48fd-a911-96c04029c6d9.png)
-
-
-Tablero Trello 
-<img width="959" alt="Trello 1" src="https://user-images.githubusercontent.com/66883967/133898115-c60db198-3d48-4e47-824f-74f148e4992d.PNG">
-
-Link Trello https://trello.com/invite/b/bYXcx0QB/f506b0bc085d4eacec8389e8b7260077/sprint-1
+Link [Trello](https://trello.com/invite/b/bYXcx0QB/f506b0bc085d4eacec8389e8b7260077/sprint-1)
 
 
 
