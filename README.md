@@ -68,10 +68,14 @@ Entrepreneur working independently as IT Support and sysadmin for SMEs with grow
 Archivos Repositorio Git HUB
 ![image](https://user-images.githubusercontent.com/66883967/133898042-050904ed-f1a3-45bf-9207-bc35b24ce28a.png)
 
+
+
 Commmits del Repositorio
 <img width="767" alt="Commits Repositorio" src="https://user-images.githubusercontent.com/66883967/133898073-ff2efa6c-aa2f-4bf3-9ff8-cc1909e6e19a.PNG">
 
 Link Repositorio GitHub https://github.com/nblancob/Proyecto-Mision-TIC.git
+
+
 
 Tablero Trello 
 <img width="959" alt="Trello 1" src="https://user-images.githubusercontent.com/66883967/133898115-c60db198-3d48-4e47-824f-74f148e4992d.PNG">
