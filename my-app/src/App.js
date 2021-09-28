@@ -1,25 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
+import Home from './home/pages/Home';
+import Managment from './product-managment/pages/Managment';
+import Registration from './product-managment/pages/Registration';
+import SManagment from './sales-managment/pages/Smanagment';
+import SRegistration from './sales-managment/pages/Sregistration';
+import UManagment from './user-managment/pages/Usmanagment';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/product/managment" exact>
+        <Managment />
+      </Route>
+      <Route path="/product/registration" exact>
+        <Registration />
+      </Route>
+      <Route path="/sale/managment" exact>
+        <SManagment />
+      </Route>
+      <Route path="/sale/registration" exact>
+        <SRegistration />
+      </Route>
+      <Route path="/user/managment" exact>
+        <UManagment />
+      </Route>
+      <Redirect to="/" />
+    </Switch>
+  </Router>
   );
 }
 
