@@ -1,5 +1,4 @@
 import { IconContext } from "react-icons";
-import Header  from "../header";
 import {BsFillHouseFill} from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
 import React from "react";

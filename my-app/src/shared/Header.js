@@ -4,8 +4,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Homenav from './components/Homenav';
 
-
-
 const Header =()=>{
     return(
         <div>
