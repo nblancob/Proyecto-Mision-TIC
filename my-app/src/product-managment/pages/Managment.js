@@ -1,3 +1,5 @@
+import managment from './Managment.css';
+
 const Managment =()=>{
     return(
         <div>
