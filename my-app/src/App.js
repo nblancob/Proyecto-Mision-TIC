@@ -13,11 +13,11 @@ import Registration from './product-managment/pages/Registration';
 import SManagment from './sales-managment/pages/Smanagment';
 import SRegistration from './sales-managment/pages/Sregistration';
 import UManagment from './user-managment/pages/Usmanagment';
-
-function App() {
+import Header from './shared/Header';
+const App= () => {
   return (
-
     <Router>
+      <Header />
     <Switch>
       <Route path="/" exact>
         <Home />
