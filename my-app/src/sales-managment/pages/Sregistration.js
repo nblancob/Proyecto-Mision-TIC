@@ -2,7 +2,7 @@ const Sregistration = () =>{
     return(
         <div>
             <h4 className="text-center">
-                Sales managment page
+                Sales managment Heloooo
             </h4>
         </div>
     );
