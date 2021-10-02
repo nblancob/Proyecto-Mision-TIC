@@ -1,21 +1,24 @@
-export const ListaProductos =
+const ListaProductos =
     [
         {
-            id: 1,
+            id: "1",
             description: "Acero 100",
-            price: 100,
+            price: "100",
             state: "Disponible",
         },
         {
-            id: 2,
+            id: "2",
             description: "Concreto 234",
-            price: 300,
+            price: "300",
             state: "No disponible",
         },
         {
-            id: 3,
+            id: "3",
             description: "Este es el mejor zapato del planeta",
-            price: 500,
+            price: "500",
             state: "Disponible",
         },
+        
     ];
+
+export default ListaProductos;

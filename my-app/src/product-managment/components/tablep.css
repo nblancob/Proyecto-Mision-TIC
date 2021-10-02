@@ -1,5 +1,22 @@
+body,html{
+    height: 100%;
+}
 .Tablep{
-    position: relative;
-    top: 300px;
+    margin-top: 15%;
     background-color: white;
+    text-align: center;
+    justify-content: center;
+}
+.Input-search{
+    margin-top: 5%;
+    width: 70%;
+}
+.Trash-btn{
+    background-color: #b7094c;
+}
+.Pencil-btn{
+    background-color: #0091ad;
+}
+.Info-btn{
+    background-color: #5c4d7d;
 }
