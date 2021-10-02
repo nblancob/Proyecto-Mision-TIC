@@ -1,35 +1,42 @@
 import Table from 'react-bootstrap/Table';
+import tablep from '/Users/jeova/OneDrive/Documentos/MisionTic/Proyecto_MERN/Proyecto-Mision-TIC/my-app/src/product-managment/components/tablep.css'
+import Button from '@restart/ui/esm/Button';
 
-const tableSales =()=> {  
+const TableSales =()=> {  
     return(      
-            <div>
-           <h1>Holaaaaaaa</h1>
-            {/* <Table striped bordered hover >
+            <div className="container mt-1 " md="auto">
+            <Table striped bordered hover className="Tablep mt-1" style={{tablep}} >
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Descripción</th>
+                        <th>Fecha</th>
                         <th>Valor</th>
                         <th>Estado</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+
                     </tr>
                 </thead>
                 <tbody>
                  
                             <tr >
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>10001</td>
+                                <td>30/09/2021</td>
+                                <td>$500000</td>
+                                <td>PREPARADA</td>
+
+                            </tr>
+                            <tr >
+                                <td>10002</td>
+                                <td>01/10/2021</td>
+                                <td>$400000</td>
+                                <td>ACTIVA</td>
+
                             </tr>
                
               
                 </tbody>
-            </Table> */}
+            </Table>
+           
             </div>
         );
     }
-export default tableSales;
+export default TableSales;
