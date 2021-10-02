@@ -16,14 +16,14 @@ const Sregistration = () =>{
     <Row className="justify-content-md-center mb-4">
     <Col xs lg="4" className="justify-content-center">
     <Form.Group className="mb-4 justify-content-center" controlId="formGridAddress1">
-    <Form.Label>Fecha:</Form.Label>
+    <Form.Label className="title">Fecha:</Form.Label>
     <Form.Control type="date" placeholder="02/10/2021" />
   </Form.Group>
   </Col>
   </Row>
   <Row className="justify-content-center mb-4 text-center">
   <Col  className="justify-content-space-around" md="1">
-  <Form.Label>ID Venta:</Form.Label>
+  <Form.Label className="title">ID Venta:</Form.Label>
   </Col>
   <Col md="2">
   <Form.Group direction="horizontal" className="mb-4" controlId="formGridAddress2">
@@ -43,7 +43,7 @@ const Sregistration = () =>{
     
   <Row className="justify-content-center mb-4">
   <Col  md="1">
-  <Form.Label>Estado</Form.Label>
+  <Form.Label className="title">Estado</Form.Label>
   </Col>
   <Col  md="2" >
   <Form.Group as={Col} controlId="formGridState" className="mb-3">

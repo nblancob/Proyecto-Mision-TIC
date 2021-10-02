@@ -12,7 +12,7 @@ const Header =()=>{
                     <Homenav/>
                         <Nav className="Content-Nav justify-content-end" >
                             <Nav.Link href="/user/managment" style={{color: 'white'}}>Usuario</Nav.Link>
-                            <Nav.Link href="/sale/managment" style={{color: 'white'}}>Ventas</Nav.Link>
+                            <Nav.Link href="/sale/registration" style={{color: 'white'}}>Ventas</Nav.Link>
                             <Nav.Link href="/product/managment" style={{color: 'white'}}>Productos</Nav.Link>
                         </Nav>
                 </Container>
