@@ -8,7 +8,7 @@ const TableSales =()=> {
             <Table striped bordered hover className="Tablep mt-1" style={{tablep}} >
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>ID Venta</th>
                         <th>Fecha</th>
                         <th>Valor</th>
                         <th>Estado</th>
@@ -21,14 +21,14 @@ const TableSales =()=> {
                                 <td>10001</td>
                                 <td>30/09/2021</td>
                                 <td>$500000</td>
-                                <td>PREPARADA</td>
+                                <td>EN PROCESO</td>
 
                             </tr>
                             <tr >
                                 <td>10002</td>
                                 <td>01/10/2021</td>
                                 <td>$400000</td>
-                                <td>ACTIVA</td>
+                                <td>ENTREGADA</td>
 
                             </tr>
                
