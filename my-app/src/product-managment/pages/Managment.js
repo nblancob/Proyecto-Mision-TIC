@@ -1,13 +1,13 @@
 import managment from './Managment.css';
-import Tablep from '../components/Tablep';
+import Search from '../components/Search';
 
 const Managment =()=>{
     return(
         <div style={{managment}}>
-            <h2 className="text-center">
-                Product Managment Page
+            <h2 className="title text-center">
+                ADMINISTRADOR DE PRODUCTOS
             </h2>
-            <Tablep/>
+            <Search/>
         </div>
     );
 }
