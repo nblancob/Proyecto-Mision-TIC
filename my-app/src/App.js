@@ -15,6 +15,7 @@ import SRegistration from './sales-managment/pages/Sregistration';
 import UManagment from './user-managment/pages/Usmanagment';
 import Header from './shared/Header';
 
+
 const App= () => {
   return (
     <Router>
