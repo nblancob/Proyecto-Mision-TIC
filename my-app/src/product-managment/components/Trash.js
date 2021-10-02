@@ -1,8 +1,12 @@
 import Button from 'react-bootstrap/Button';
 import tablep from './tablep.css'
+const handleClick=(event)=>{
+  console.log(event);
+}
+
 const Trash =() =>{
     return(
-        <Button className="Trash-btn" style={{tablep}}>
+        <Button className="Trash-btn" style={{tablep}} onClick={handleClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

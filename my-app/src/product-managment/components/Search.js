@@ -31,7 +31,7 @@ class Search extends Component{
             <div className="container">
             <InputGroup className="Input-search mb-3 justify-content-center container" style={{tablep}} onChange={this.handleChange}>
                 <FormControl
-                    placeholder="ID del producto"
+                    placeholder="ID o descripción del producto"
                     aria-label="Recipient's username"
                     aria-describedby="basic-addon2"
                 />

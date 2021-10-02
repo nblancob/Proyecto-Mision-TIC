@@ -27,7 +27,7 @@ const Tablep =(state)=> {
                                 <td>${data.price}</td>
                                 <td>{data.state}</td>
                                 <td style={{width:"5px"}}><Pencil/></td>
-                                <td style={{width:"5px"}}><Trash/></td>
+                                <td style={{width:"5px"}}><Trash /></td>
                             </tr>
                         );
                     })}
