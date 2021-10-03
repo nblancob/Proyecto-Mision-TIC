@@ -4,7 +4,6 @@ import Trash from './Trash';
 import Pencil from './Pencil';
 
 const Tablep =(state)=> {  
-    console.log(state.variable.newTable.id);
         return(      
             <div className="container">
             <Table striped bordered hover className="Tablep" style={{tablep}}>

@@ -6,7 +6,7 @@ const handleClick=(event)=>{
 
 const Trash =() =>{
     return(
-        <Button className="Trash-btn" style={{tablep}} onClick={handleClick}>
+        <Button className="Trash-btn" style={{tablep}} onClick={handleClick} key='id'> 
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

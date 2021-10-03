@@ -22,6 +22,11 @@ class Search extends Component{
     componentDidMount(){
         this.setState({newTable:ListaProductos});
     }
+    proof=(event)=>{
+        if(event.key==='Enter'){
+            this.filter();
+        }
+    }
     filter=()=>{
         const search=ListaProductos.filter((p)=>p.id.includes(this.state.value)||p.description.includes(this.state.value));
         this.setState({newTable:search});
@@ -29,7 +34,7 @@ class Search extends Component{
     render(){
         return(
             <div className="container">
-            <InputGroup className="Input-search mb-3 justify-content-center container" style={{tablep}} onChange={this.handleChange}>
+            <InputGroup className="Input-search mb-3 justify-content-center container" style={{tablep}} onChange={this.handleChange} onKeyPress={this.proof}>
                 <FormControl
                     placeholder="ID o descripción del producto"
                     aria-label="Recipient's username"
