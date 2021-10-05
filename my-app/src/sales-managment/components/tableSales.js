@@ -7,7 +7,7 @@ const TableSales =()=> {
             <Table striped bordered hover className="Tablep mt-1" >
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>ID Venta</th>
                         <th>Fecha</th>
                         <th>Valor</th>
                         <th>Estado</th>

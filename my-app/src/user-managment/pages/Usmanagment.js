@@ -1,9 +1,14 @@
+import UserPage from "./components/UserPage";
+import UserTable from "./components/UserTable";
+
 const Usmanagment = () =>{
     return(
         <div>
-            <h4 className="text-center">
-                User managment page
-            </h4>
+            <h2 className=" title text-center">
+                GESTIÓN DE USUARIOS
+            </h2>
+            <UserPage/>
+            <UserTable/>
         </div>
     );
 }
