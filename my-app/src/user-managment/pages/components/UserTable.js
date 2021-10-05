@@ -1,12 +1,12 @@
 import Table from 'react-bootstrap/Table';
-import tablep from '/Users/jeova/OneDrive/Documentos/MisionTic/Proyecto_MERN/Proyecto-Mision-TIC/my-app/src/product-managment/components/tablep.css'
+// import tablep from '/Users/jeova/OneDrive/Documentos/MisionTic/Proyecto_MERN/Proyecto-Mision-TIC/my-app/src/product-managment/components/tablep.css'
 import Button from 'react-bootstrap/Button'
 
 
 const UserTable =()=> {  
     return(      
             <div className="container mt-4 " md="auto">
-            <Table striped bordered hover className="Tablep mt-3" style={{tablep}} >
+            <Table striped bordered hover className="Tablep mt-3"  >
                 <thead>
                     <tr>
                         <th>ID Vendedor</th>
