@@ -50,9 +50,9 @@ const Sregistration = () =>{
       
       <Form.Select defaultValue="Elegir...">
         <option>Elegir...</option>
-        <option>ACTIVA</option>
-        <option>PREPARADA</option>
-        <option>DESPACHADA</option>
+        <option>EN PROCESO</option>
+        <option>CANCELADA</option>
+        <option>ENTREGADA</option>
 
       </Form.Select>
     </Form.Group>
