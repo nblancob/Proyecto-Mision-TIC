@@ -4,7 +4,6 @@ import Trash from './Trash';
 import Pencil from './Pencil';
 
 const Tablep =(state)=> {  
-    console.log(state.variable.newTable.id);
         return(      
             <div className="container">
             <Table striped bordered hover className="Tablep" style={{tablep}}>
@@ -27,7 +26,7 @@ const Tablep =(state)=> {
                                 <td>${data.price}</td>
                                 <td>{data.state}</td>
                                 <td style={{width:"5px"}}><Pencil/></td>
-                                <td style={{width:"5px"}}><Trash/></td>
+                                <td style={{width:"5px"}}><Trash /></td>
                             </tr>
                         );
                     })}
