@@ -14,7 +14,6 @@ const Login =() =>{
           Iniciar
         </Button>
       </Form>
->>>>>>> dc5c976ae2c6fb47b980fa5cf3db8e50637395f8
     );
 }
 
