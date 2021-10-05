@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import TableSales from '../components/TableSales';
+import Tablesales from '../components/tableSales'
 
 
 const Sregistration = () =>{
@@ -65,7 +65,7 @@ const Sregistration = () =>{
    </Row>
     
 </Form>
-<TableSales/>
+<Tablesales/>
 <Row className="justify-content-center mb-4"> 
 <Col md="1">
 <Button variant="primary" type="submit" >
