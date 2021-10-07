@@ -18,6 +18,7 @@ import Header from './shared/Header';
 
 const App= () => {
   return (
+    <div style={{}}>
     <Router>
       <Header />
     <Switch>
@@ -42,6 +43,7 @@ const App= () => {
       <Redirect to="/" />
     </Switch>
   </Router>
+  </div>
   );
 }
 
