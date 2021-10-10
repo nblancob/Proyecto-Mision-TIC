@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 const productsRoute = require("./routes/products");
 const salesRoute = require("./routes/sales");
 const usersRoute = require("./routes/users");
-const URI ="mongodb+srv://nblancob:1899Nic%40@cluster0.mzqw4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const URL ="code";
 const cors = require("cors");
 
 //Middlewares
@@ -17,7 +17,7 @@ app.use(express.static("./public"));
 app.use(cors());
 //Database
 mongoose
-  .connect(URI)
+  .connect(URL)
   .then((db) => console.log("DB is connected"))
   .catch((err) => console.error(err));
 
