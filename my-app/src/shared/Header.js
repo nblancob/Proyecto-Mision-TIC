@@ -14,6 +14,7 @@ const Header =()=>{
                             <Nav.Link href="/user/managment" style={{color: 'white'}}>Usuario</Nav.Link>
                             <Nav.Link href="/sale/registration" style={{color: 'white'}}>Ventas</Nav.Link>
                             <Nav.Link href="/product/managment" style={{color: 'white'}}>Productos</Nav.Link>
+                            <Nav.Link href="/sale/managment" style={{color: 'white'}}>Administrador de Ventas</Nav.Link>
                         </Nav>
                 </Container>
             </Navbar>
