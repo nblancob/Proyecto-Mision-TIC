@@ -22,7 +22,7 @@ const Sregistration = () => {
 }
 
 const handleBuscar =  ()=>{
-  if (ventaID == "" && date == "") {
+  if (ventaID === "" && date === "") {
     console.log("hola");
     fetch('http://localhost:3000/api/sales/1')
      .then(response => response.json())
