@@ -1,9 +1,15 @@
+import management from './Management.css';
+import Tablev from '../components/Table';
+import Form from  '../components/Form';
+
+
 const Smanagment = () =>{
     return(
-        <div>
-            <h4 className="text-center">
-                Sales managment page
+        <div style={{management}}>
+            <h4 className="title">
+                Administrador de Ventas
             </h4>
+            <Tablev/>
         </div>
     );
 }
