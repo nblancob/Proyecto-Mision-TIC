@@ -9,11 +9,11 @@
     background-color: white;
 }
 
-.centrar{
-    text-align: center;
-}
-
 /*BUTTON INSERT SALE*/
 .boton{
     background: #8874df;
+}
+
+.boton:hover{
+    background: #bd6796;
 }

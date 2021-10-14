@@ -1,5 +1,4 @@
 import management from '../pages/Management.css'
-
 import {Table,Button,Contaiiner,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter} from 'reactstrap';
 
 const ButtonInsert = () => {
