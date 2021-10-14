@@ -1,7 +1,8 @@
 import Table from 'react-bootstrap/Table';
 
 
-const TableSales =()=> {  
+const TableSales =({ventas})=> {
+    console.log("Ventas", ventas)  
     return(      
             <div className="container mt-1 " md="auto">
             <Table striped bordered hover className="Tablep mt-1" >
@@ -14,22 +15,21 @@ const TableSales =()=> {
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr >
-                        <td>10001</td>
-                        <td>30/09/2021</td>
-                        <td>$500000</td>
-                        <td>PREPARADA</td>
-                    </tr>
-                    <tr >
-                        <td>10002</td>
-                        <td>01/10/2021</td>
-                        <td>$400000</td>
-                        <td>ACTIVA</td>
-
-                    </tr>
-               
-              
+                <tbody> 
+                    {
+                        ventas.map((venta) =>{
+                            var fechaNueva = new Date(venta.Fecha);
+                            return(
+                                <tr key={venta._id}>
+                                    <td>{venta._id}</td>
+                                    <td>{fechaNueva.toLocaleString()}</td>
+                                    <td>${venta.Valor}</td>
+                                    <td>{venta.Estado}</td>
+                                </tr>    
+                            );
+                        })
+                    }
+                                                    
                 </tbody>
             </Table>
            
