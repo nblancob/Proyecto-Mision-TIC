@@ -4,7 +4,8 @@ var mongoose = require("mongoose");
 const productsRoute = require("./routes/products");
 const salesRoute = require("./routes/sales");
 const usersRoute = require("./routes/users");
-const URL ="code";
+const URL = "code"
+//"mongodb+srv://jeovan:Admin123@cluster0.07tts.mongodb.net/Test-Project?retryWrites=true&w=majority";
 const cors = require("cors");
 
 //Middlewares
