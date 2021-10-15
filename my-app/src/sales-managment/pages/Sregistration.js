@@ -13,7 +13,6 @@ const Sregistration = () => {
 
 
   const handleClic =  ()=>{
-    console.log("hola");
      fetch('http://localhost:3000/api/sales/1')
       .then(response => response.json())
       .then(data => setVentas(data))
@@ -37,7 +36,6 @@ const handleBuscar =  ()=>{
      })
      .catch(e => console.log(e))
   }else {
-    console.log("hola console");
     fetch('http://localhost:3000/api/sales/fecha/' + date)
      .then(response => response.json())
      .then(data => {
