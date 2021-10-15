@@ -27,7 +27,6 @@ class Search extends Component {
       this.setState({newTable:response});
     };
     featchData();
-    console.log(this.state);
   }
 
   proof = (event) => {

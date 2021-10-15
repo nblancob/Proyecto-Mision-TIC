@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Trash from '../../product-managment/components/Trash';
 import Pencil from '../../product-managment/components/Pencil';
 import management from '../pages/Management.css'
-import {Button,Container,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter} from 'reactstrap';
+import {Button,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter} from 'reactstrap';
 
 /*test Data for CRUD */
 import data from '../pages/Test_Data'
@@ -59,7 +59,7 @@ class table extends Component{
                 <tbody>
                     {this.state.data.map((elemento)=>(
                         <tr>
-                            <td scope="row">{elemento.id}</td>
+                            <td>{elemento.id}</td>
                             <td>{elemento.idProducto}</td>
                             <td>{elemento.vendedor}</td>
                             <td>{elemento.cliente}</td>

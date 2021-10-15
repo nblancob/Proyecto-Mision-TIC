@@ -4,7 +4,7 @@ const CallApi = async (url, options = {}) => {
     Accept: "application/json",
   };
 
-  const response = await fetch("http://localhost:3000/api" + url,options);
+  const response = await fetch("http://localhost:3000/api" + url, options);
   const data = await response.json();
   return data;
 };
@@ -14,9 +14,18 @@ const api = {
     list() {
       return CallApi("/products");
     },
+    getProduct(id) {
+      return CallApi(`/products/${id}`);
+    },
     delete(id) {
       return CallApi(`/products/${id}`, {
         method: "DELETE",
+      });
+    },
+    edit(data) {
+      return CallApi(`/products/${data._id}`, {
+        method: "PUT",
+        body: JSON.stringify(data),
       });
     },
   },

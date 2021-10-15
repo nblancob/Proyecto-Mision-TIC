@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 import managment from './Managment.css';
-import Newproduct from '../components/Newproduct';
+import Newproduct from '../components/ProductForm';
 
 const Registration = () =>{
     return(
