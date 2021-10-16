@@ -37,7 +37,6 @@ class Search extends Component {
   filter = () => {
     const search = ListaProductos.filter(
       (p) =>
-        p.id.includes(this.state.value) ||
         p.description.includes(this.state.value)
     );
     this.setState({ newTable: search });
@@ -60,7 +59,7 @@ class Search extends Component {
             Buscar
           </Button>
         </InputGroup>
-        <Tablep variable={this.state} />
+        <Tablep state={this.state} setState={this.setState} />
       </div>
     );
   }

@@ -7,15 +7,32 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import ProductForm from "./ProductForm";
 
-const Tablep = (state) => {
+const Tablep = ({state, setState}) => {
+  const [error, setError] = useState();
   const [productID, setproductID] = useState();
-
+  const [success, setSuccess] = useState();
   const [newProduct, setNewProduct] = useState({
+    _id: " ",
     id_producto: 0,
     description: "Hola mundo",
     price: 0,
     state: false,
   });
+
+  const handleChange = (event) => {
+    setNewProduct({ ...newProduct, [event.target.name]: event.target.value });
+    console.log(newProduct);
+  };
+
+  const editProduct = async () => {
+    const apiResponse = await api.products.edit(newProduct);
+    if (apiResponse.err) {
+      setError(apiResponse.err.message);
+      console.log(apiResponse.err);
+    } else {
+      setSuccess(apiResponse);
+    }
+  };
 
   const deleteProduct = (event) => {
     setproductID(event.target.id);
@@ -26,7 +43,6 @@ const Tablep = (state) => {
     setmodalInsertar(true);
     const response = await api.products.getProduct(id);
     setNewProduct(response);
-    console.log(newProduct);
   };
 
   const [modalInsertar, setmodalInsertar] = useState(false);
@@ -45,7 +61,7 @@ const Tablep = (state) => {
           </tr>
         </thead>
         <tbody>
-          {state.variable.newTable.map((data, key) => {
+          {state.newTable.map((data, key) => {
             if (data._id !== productID) {
               let state;
               if (data.state === true) {
@@ -114,10 +130,12 @@ const Tablep = (state) => {
           <Modal.Title>EDITAR PRODUCTO</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ProductForm formValue={newProduct} />
+          <ProductForm formValue={newProduct} handleChange={handleChange} />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary">Editar</Button>
+          <Button variant="primary" id={newProduct._id} onClick={editProduct}>
+            Editar
+          </Button>
           <Button variant="danger" onClick={() => setmodalInsertar(false)}>
             Cancelar
           </Button>
