@@ -17,14 +17,12 @@ const Sregistration = () => {
   };
 
   const handleBuscar = () => {
-    console.log("im here");
     if (ventaID === "" && date === "") {
       fetch("http://localhost:3000/api/sales/1")
         .then((response) => response.json())
         .then((data) => setVentas(data))
         .catch((e) => console.log(e));
     } else if (ventaID !== "") {
-      console.log("hola console");
       fetch("http://localhost:3000/api/sales/" + ventaID)
         .then((response) => response.json())
         .then((data) => {
@@ -35,7 +33,6 @@ const Sregistration = () => {
       fetch("http://localhost:3000/api/sales/fecha/" + date)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
           setVentas(data);
         })
         .catch((e) => console.log(e));

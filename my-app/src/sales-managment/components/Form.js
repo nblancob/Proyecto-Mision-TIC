@@ -1,9 +1,10 @@
 import Form from "react-bootstrap/Form";
 import "./Form.css";
 
-const FormSales = ({ date, handleDate, ventaID, handleVentaID }) => {
+const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => {
+
   return (
-    <Form className="container font-link">
+    <Form onReset={editProduct} className="container font-link">
       <Form.Group controlId="formGridAddress1">
         <Form.Label>Fecha:</Form.Label>
         <Form.Control
