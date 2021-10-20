@@ -11,6 +11,7 @@ exports.addSales = (req,res) => {
     const salesAdd = new SalesManagment({
         id_product: req.body.id_product,
         seller: req.body.seller,
+        customer: req.body.customer,
         description : req.body.description,
         amount: req.body.amount,
         price: req.body.price,

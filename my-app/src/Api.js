@@ -10,6 +10,11 @@ const api = {
       return CallApi("products");
     },
   },
+  salesManagment:{
+    list() {
+      return CallApi("salesManagment");
+    },
+  },
 };
 
 export default api;

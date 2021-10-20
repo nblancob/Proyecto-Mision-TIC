@@ -4,28 +4,35 @@ import Trash from '../../product-managment/components/Trash';
 import Pencil from '../../product-managment/components/Pencil';
 import management from '../pages/Management.css'
 import {Button,Container,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter} from 'reactstrap';
+import api from '../../Api';
 
 /*test Data for CRUD */
-import data from '../pages/Test_Data'
+import data from '../pages/Test_Data';
 
 class table extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            data:data,
+            data: [],
             form:{
                 id:'',
-                idProducto:'',
-                vendedor:'',
-                cliente:'',
-                descripcion:'',
-                cantidad:'',
-                valor:'',
+                id_product:'',
+                seller:'',
+                description:'',
+                amount:'',
+                price:'',
                 total:''
             },
             modalInsertar: false,
         };
       };
+    
+    componentDidMount() {
+        fetch('http://localhost:4000/api/salesManagment')
+            .then(response => response.json())
+            .then(dataJson => this.setState({data:dataJson})) 
+    };
+    
     
     mostrarModalInsertar=()=>{
         this.setState({modalInsertar:true});
@@ -44,7 +51,6 @@ class table extends Component{
             <Table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Id Venta</th>
                         <th scope="col">Id Producto</th>
                         <th scope="col">Vendedor</th>
                         <th scope="col">Cliente</th>
@@ -59,13 +65,12 @@ class table extends Component{
                 <tbody>
                     {this.state.data.map((elemento)=>(
                         <tr>
-                            <td scope="row">{elemento.id}</td>
-                            <td>{elemento.idProducto}</td>
-                            <td>{elemento.vendedor}</td>
-                            <td>{elemento.cliente}</td>
-                            <td>{elemento.descripcion}</td>
-                            <td>{elemento.cantidad}</td>
-                            <td>{elemento.valor}</td>
+                            <td>{elemento.id_product}</td>
+                            <td>{elemento.seller}</td>
+                            <td>{elemento.customer}</td>
+                            <td>{elemento.description}</td>
+                            <td>{elemento.amount}</td>
+                            <td>{elemento.price}</td>
                             <td>{elemento.total}</td>
                             <td style={{width:"5px"}}><Pencil/></td>
                             <td style={{width:"5px"}}><Trash/></td>  
