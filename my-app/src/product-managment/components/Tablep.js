@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import ProductForm from "./ProductForm";
 import { useHistory } from "react-router-dom";
 
-const Tablep = ({ state, setState }) => {
+const Tablep = ({ productos , setProductos}) => {
   const history = useHistory();
   const [error, setError] = useState();
   const [productID, setproductID] = useState("");
@@ -33,7 +33,6 @@ const Tablep = ({ state, setState }) => {
 
   const handleClick = async (event) => {
     setproductID(event.target.id);
-    console.log(productID);
     setmodalInsertar(true);
   };
 
@@ -58,16 +57,13 @@ const Tablep = ({ state, setState }) => {
     });
   };
 
-  const deleteProduct = async (event) => {
+  const deleteProduct = (event) => {
     setproductID(event.target.id);
-    console.log(productID);
-    const apiResponse = await api.products.delete(productID);
-    if (apiResponse.err) {
-      setError(apiResponse.err.message);
-      console.log(apiResponse.err);
-    } else {
-      setSuccess(apiResponse);
-    }
+    api.products.delete(event.target.id);
+    const newState = productos.filter(
+      (productos) => productos._id !== event.target.id
+    );
+      setProductos(newState)
   };
 
   return (
@@ -84,7 +80,7 @@ const Tablep = ({ state, setState }) => {
           </tr>
         </thead>
         <tbody>
-          {state.newTable.map((data, key) => {
+          {productos.map((data, key) => {
             let state;
             if (data.state === true) {
               state = "Disponible";
@@ -153,7 +149,23 @@ const Tablep = ({ state, setState }) => {
           })}
         </tbody>
       </Table>
-      <Button className="">add</Button>
+      <Button
+        className="btn-add font-family"
+        variant="outline-success"
+        href="/product/registration"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          className="bi bi-plus"
+          viewBox="0 0 20 20"
+        >
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+        </svg>
+        Agregar producto
+      </Button>
       <Modal show={modalInsertar}>
         <Modal.Header className="Modal-Header font-link">
           <Modal.Title>EDITAR PRODUCTO</Modal.Title>
@@ -174,6 +186,7 @@ const Tablep = ({ state, setState }) => {
           <Button
             variant="danger"
             onClick={() => {
+              history.go(0);
               setmodalInsertar(false);
             }}
           >
