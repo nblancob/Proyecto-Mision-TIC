@@ -6,7 +6,7 @@ const salesRoute = require("./routes/sales");
 const usersRoute = require("./routes/users");
 
 const salesManagment = require("./routes/salesManagment");
-const URI ="mongodb+srv://nblancob:Nico123@cluster0.gxith.mongodb.net/Cluster0?retryWrites=true&w=majority";
+const URL ="mongodb+srv://nblancob:Nico123@cluster0.gxith.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const cors = require("cors");
 
 //Middlewares

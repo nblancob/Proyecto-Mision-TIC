@@ -1,5 +1,4 @@
 const SalesManagment = require('../models/salesManagment');
-console.log("is run salesManagment");
 
 exports.getSales = (req, res) => {
     SalesManagment.find().then((saleResult) => {
@@ -19,7 +18,6 @@ exports.addSales = (req,res) => {
     });
 
     salesAdd.save().then((createdSale) => {
-        console.log(createdSale);
         res.status(201).json("Created succesfully");
     }); 
 
