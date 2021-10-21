@@ -3,11 +3,10 @@ import Table from 'react-bootstrap/Table';
 import Trash from '../../product-managment/components/Trash';
 import Pencil from '../../product-managment/components/Pencil';
 import management from '../pages/Management.css'
-import {Button,Container,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter} from 'reactstrap';
+import {Button,Container,Modal,ModalBody,ModalHeader,FormGroup,ModalFooter,Form} from 'reactstrap';
 import api from '../../Api';
 
-/*test Data for CRUD */
-import data from '../pages/Test_Data';
+const url = 'http://localhost:4000/api/salesManagment';
 
 class table extends Component{
     constructor(props) {
@@ -15,9 +14,9 @@ class table extends Component{
         this.state = {
             data: [],
             form:{
-                id:'',
                 id_product:'',
                 seller:'',
+                customer:'',
                 description:'',
                 amount:'',
                 price:'',
@@ -27,12 +26,42 @@ class table extends Component{
         };
       };
     
-    componentDidMount() {
-        fetch('http://localhost:4000/api/salesManagment')
+    listSale=()=>{
+        fetch(url)
             .then(response => response.json())
             .then(dataJson => this.setState({data:dataJson})) 
+    }
+    componentDidMount() {
+        this.listSale();
     };
     
+    handleChange= async e=>{
+        e.persist();
+        await this.setState({
+            form:{
+                ...this.state.form,
+                [e.target.name]:e.target.value
+            }
+        });
+        console.log(this.state.form)
+    }
+    
+    addSale(e){
+        fetch(url,{
+            method: 'POST',
+            body: JSON.stringify(this.state.form),
+            headers:{
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            }
+        })
+            .then(res => console.log(res))
+            .catch(err => console.error(err));
+
+        console.log('Agregando Tarea');
+        this.listSale();
+        this.ocultarModalInsertar();
+    }
     
     mostrarModalInsertar=()=>{
         this.setState({modalInsertar:true});
@@ -86,41 +115,49 @@ class table extends Component{
                     </div>
                 </ModalHeader>
                 <ModalBody>
-                    <FormGroup>
-                        <label>Id</label>
-                        <input className="form-control" type="text" value={this.state.data.length+1} />
-                    </FormGroup> 
-                    <FormGroup>
-                        <label>IdProducto:</label>
-                        <input className="form-control" name="idProducto" type="text"  />
-                    </FormGroup> 
-                    <FormGroup>
-                        <label>Vendedor</label>
-                        <input className="form-control" name="vendedor" type="text"  />
-                    </FormGroup> 
-                    <FormGroup>
-                        <label>Cliente</label>
-                        <input className="form-control" name="cliente" type="text"  />
-                    </FormGroup> 
-                    <FormGroup>
-                        <label>Descripción</label>
-                        <input className="form-control" name="descripcion" type="text"  />
-                    </FormGroup> 
-                    <FormGroup>
-                        <label>Cantidad</label>
-                        <input className="form-control" name="cantidad" type="text"  />
-                    </FormGroup>
-                    <FormGroup>
-                        <label>Valor</label>
-                        <input className="form-control" name="valor" type="text"  />
-                    </FormGroup>
-                    <FormGroup>
-                        <label>Total</label>
-                        <input className="form-control" name="total" type="text"  />
-                    </FormGroup>
+                    <Form onSubmit={this.addSale}>
+                        <FormGroup>
+                            <label>IdProducto:</label>
+                            <input className="form-control" name="id_product" type="text" onChange={this.handleChange}/>
+                        </FormGroup> 
+                        <FormGroup>
+                            <label>Vendedores</label>
+                            <select id="inputState" class="form-control" name="seller" onChange={this.handleChange}>
+                                <option selected>Seleccione un Vendedor</option>
+                                <option >Juan Sebation Rondon</option>
+                                <option >Jose Meneces</option>
+                                <option >Ricardo Cubides</option>
+                            </select>
+                        </FormGroup> 
+                        <FormGroup>
+                            <label>Cliente</label>
+                            <select id="inputState" class="form-control" name="customer" onChange={this.handleChange}>
+                                <option selected>Seleccione un Cliente</option>
+                                <option>Fernando Solano</option>
+                                <option>Juan Danilo</option>
+                                <option>David Villamil</option>
+                            </select>
+                        </FormGroup> 
+                        <FormGroup>
+                            <label>Descripción</label>
+                            <input className="form-control" name="description" type="text" onChange={this.handleChange} />
+                        </FormGroup> 
+                        <FormGroup>
+                            <label>Cantidad</label>
+                            <input className="form-control" name="amount" type="text" onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <label>Valor</label>
+                            <input className="form-control" name="price" type="text" onChange={this.handleChange} />
+                        </FormGroup>
+                        <FormGroup>
+                            <label>Total</label>
+                            <input className="form-control" name="total" type="text" onChange={this.handleChange}/>
+                        </FormGroup>
+                    </Form>
                 </ModalBody>
                 <ModalFooter>
-                        <Button color="primary">Insertar</Button>
+                        <Button onClick={() => this.addSale(this.state)} color="primary">Insertar</Button>
                         <Button color="danger" onClick={() => this.ocultarModalInsertar()}>Cancelar</Button>
                 </ModalFooter>        
             </Modal>
