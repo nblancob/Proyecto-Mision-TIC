@@ -32,3 +32,20 @@ exports.getProducts = (req, res) => {
     res.status(200).json(postResult);
   });
 };
+
+exports.editSalesID = (req, res) => {
+  console.log("Aquí");
+  const id = req.params.id;
+  const salesUpd = new testVentas({
+    _id: id,
+    Fecha: req.body.Fecha,
+    Valor: req.body.Valor,
+    Estado: req.body.Estado,
+    },
+    {
+      collection: "Ventas"
+    });
+  testVentas.findByIdAndUpdate(id, salesUpd).then((productoResult) => {
+    res.status(200).json("La venta se actualizó satisfactoriamente");
+  });
+};

@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import "./Form.css";
 
-const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => {
+const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct, ventaState, handleVentaState }) => {
 
   return (
     <Form onReset={editProduct} className="container font-link">
@@ -29,7 +29,7 @@ const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => 
 
       <Form.Group controlId="formGridState">
         <Form.Label>Estado:</Form.Label>
-        <Form.Select defaultValue="Elegir...">
+        <Form.Select defaultValue={ventaState} onChange={handleVentaState}> 
           <option>Elegir...</option>
           <option>ACTIVA</option>
           <option>PREPARADA</option>

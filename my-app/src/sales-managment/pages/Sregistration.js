@@ -8,20 +8,43 @@ const Sregistration = () => {
   const [ventas, setVentas] = useState([]);
   const [date, setDate] = useState("");
   const [ventaID, setVentaID] = useState("");
+  const [ventaState, setVentaState] = useState("Elegir...");
 
   const handleClic = () => {
-    fetch("http://localhost:3000/api/sales/1")
+    if (ventaID !== "") {
+      const editVenta = ventas.find(venta => venta._id == ventaID);
+      editVenta.Estado = ventaState;
+      console.log(editVenta);
+
+      fetch("http://localhost:3000/api/sales/edit/" + ventaID, {
+        method: 'PUT', 
+        headers: {
+          'Content-Type': 'application/json'
+        
+        },
+        body: JSON.stringify(editVenta) // body data type must match "Content-Type" header
+      })
       .then((response) => response.json())
-      .then((data) => setVentas(data))
+      .then(fetch("http://localhost:3000/api/sales/" + ventaID)
+      .then((response) => response.json())
+      .then((data) => {
+        setVentas([data]);
+      })
+      .catch((e) => console.log(e)))
       .catch((e) => console.log(e));
+      
+    }
+    
   };
 
   const handleBuscar = () => {
     if (ventaID === "" && date === "") {
+      
       fetch("http://localhost:3000/api/sales/1")
         .then((response) => response.json())
         .then((data) => setVentas(data))
         .catch((e) => console.log(e));
+        
     } else if (ventaID !== "") {
       fetch("http://localhost:3000/api/sales/" + ventaID)
         .then((response) => response.json())
@@ -46,6 +69,9 @@ const Sregistration = () => {
   const handleVentaID = (event) => {
     setVentaID(event.target.value);
   };
+  const handleVentaState = (event) => {
+    setVentaState(event.target.value);
+  };
   const handleFecha = () => {
     fetch("http://localhost:3000/api/sales/fecha/" + date)
       .then((response) => response.json())
@@ -65,7 +91,9 @@ const Sregistration = () => {
         handleVentaID={handleVentaID}
         handleBuscar={handleBuscar}
         handleFecha={handleFecha}
+        handleVentaState={handleVentaState}
         className="mt-1"
+        ventaState={ventaState}
       />
       <Button
         className="btn mt-4 mb-3 "
@@ -91,7 +119,7 @@ const Sregistration = () => {
         Actualizar
       </Button>
 
-      <Button variant="secondary" type="submit" className="ms-4">
+      <Button variant="secondary" type="button" className="ms-4">
         Cerrar
       </Button>
     </Container>
