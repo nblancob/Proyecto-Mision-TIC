@@ -3,7 +3,7 @@ import tablep from './tablep.css'
 
 const Pencil =() =>{
     return(
-        <Button className="Pencil-btn" style={{tablep}} href="/product/registration">
+        <Button className="Pencil-btn" style={{tablep}}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

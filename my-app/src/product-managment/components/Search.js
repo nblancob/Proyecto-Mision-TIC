@@ -2,69 +2,61 @@ import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import tablep from "./tablep.css";
-import React, { Component } from "react";
 import Tablep from "./Tablep";
-import ListaProductos from "./data";
 import api from "../../Api";
+import { useEffect } from "react";
+import { useState } from "react";
 
-class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: "",
-      newTable: [],
-    };
-  }
-  handleChange = (event) => {
-    this.setState({
-      value: event.target.value,
-    });
-  };
+const Search = () => {
+  const [productos, setProductos] = useState([]);
+  const [busqueda, setBusqueda] = useState(" ");
+  const [lista, setLista] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     const featchData = async () => {
       const response = await api.products.list();
-      this.setState({newTable:response});
+      setProductos(response);
     };
     featchData();
-    console.log(this.state);
-  }
+  }, []);
 
-  proof = (event) => {
+  const handleChange = (event) => {
+    setBusqueda(event.target.value);
+  };
+  const proof = (event) => {
     if (event.key === "Enter") {
-      this.filter();
+      filter();
     }
   };
-  filter = () => {
-    const search = ListaProductos.filter(
-      (p) =>
-        p.id.includes(this.state.value) ||
-        p.description.includes(this.state.value)
-    );
-    this.setState({ newTable: search });
+  const filter = () => {
+    setLista(productos);
+    if (busqueda.length === 0) {
+      setProductos(lista);
+    } else {
+      const search = productos.filter((p) => p.description.includes(busqueda));
+      setProductos(search);
+    }
   };
-  render() {
-    return (
-      <div className="container">
-        <InputGroup
-          className="Input-search mb-3 justify-content-center container"
-          style={{ tablep }}
-          onChange={this.handleChange}
-          onKeyPress={this.proof}
-        >
-          <FormControl
-            placeholder="ID o descripción del producto"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
-          />
-          <Button className="Info-btn" id="button-addon2" onClick={this.filter}>
-            Buscar
-          </Button>
-        </InputGroup>
-        <Tablep variable={this.state} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="container">
+      <InputGroup
+        className="Input-search mb-3 justify-content-center container"
+        style={{ tablep }}
+        onChange={handleChange}
+        onKeyPress={proof}
+      >
+        <FormControl
+          placeholder="ID o descripción del producto"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+        />
+        <Button className="Info-btn" id="button-addon2" onClick={filter}>
+          Buscar
+        </Button>
+      </InputGroup>
+      <Tablep productos={productos} setProductos={setProductos} />
+    </div>
+  );
+};
 
 export default Search;
