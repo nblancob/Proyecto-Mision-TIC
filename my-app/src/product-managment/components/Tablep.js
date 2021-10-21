@@ -44,7 +44,6 @@ const Tablep = ({ productos , setProductos}) => {
     const apiResponse = await api.products.edit(newProduct);
     if (apiResponse.err) {
       setError(apiResponse.err.message);
-      console.log(apiResponse.err);
     } else {
       setSuccess(apiResponse);
     }

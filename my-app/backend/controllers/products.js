@@ -42,7 +42,12 @@ exports.editProduct = (req, res) => {
     price: req.body.price,
     state: req.body.state,
   });
-  Producto.findByIdAndUpdate(id, productUpd).then((productoResult) => {
-    res.status(200).json("El producto se actualizó satisfactoriamente");
-  });
+  Producto.findByIdAndUpdate(id, productUpd)
+    .then((productoResult) => {
+      res.status(200).json("El producto se actualizó satisfactoriamente");
+    })
+    .catch((error) => {
+      console.log("catching error");
+      res.status(500).json("Ya existe esta ID");
+    });
 };
