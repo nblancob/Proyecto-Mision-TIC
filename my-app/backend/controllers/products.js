@@ -7,12 +7,12 @@ exports.getProducts = (req, res) => {
 };
 exports.addProducts = (req, res) => {
   const productAdd = new Producto({
+    id_producto: req.body.id_producto,
     description: req.body.description,
     price: req.body.price,
     state: req.body.state,
   });
   productAdd.save().then((createdProduct) => {
-    console.log(createdProduct);
     res.status(201).json("creado satisfactoriamente");
   });
 };

@@ -6,7 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import { Alert } from "reactstrap";
 import { useState, useEffect } from "react";
 import ProductForm from "./ProductForm";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Tablep = ({ productos , setProductos}) => {
   const history = useHistory();
@@ -149,10 +149,10 @@ const Tablep = ({ productos , setProductos}) => {
           })}
         </tbody>
       </Table>
+      <Link to="/product/registration">
       <Button
         className="btn-add font-family"
         variant="outline-success"
-        href="/product/registration"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -166,6 +166,7 @@ const Tablep = ({ productos , setProductos}) => {
         </svg>
         Agregar producto
       </Button>
+      </Link>
       <Modal show={modalInsertar}>
         <Modal.Header className="Modal-Header font-link">
           <Modal.Title>EDITAR PRODUCTO</Modal.Title>

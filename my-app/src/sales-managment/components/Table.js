@@ -147,3 +147,4 @@ class table extends Component {
 }
 
 export default table;
+
