@@ -1,3 +1,4 @@
+
 const CallApi = async (url, options = {}) => {
   options.headers = {
     "Content-type": "application/json",
@@ -36,6 +37,17 @@ const api = {
         body: JSON.stringify(data),
       });
     },
+  },
+  salesManagment:{
+    list() {
+      return CallApi("salesManagment");
+    },
+    create(sale){
+      return CallApi("salesManagment",{
+        method:"POST",
+        body:JSON.stringify(sale)
+      });
+    }
   },
 };
 
