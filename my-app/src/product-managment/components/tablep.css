@@ -2,10 +2,12 @@ body,html{
     height: 100%;
 }
 .Tablep{
-    margin-top: 15%;
+    margin-top: 10%;
     background-color: white;
     text-align: center;
     justify-content: center;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
 }
 .Input-search{
     margin-top: 5%;
@@ -28,4 +30,7 @@ body,html{
 .font-link{
     font-family: 'Inter',sans-serif;
     color: white;
+}
+.btn-add{
+    font-weight: bold;
 }
