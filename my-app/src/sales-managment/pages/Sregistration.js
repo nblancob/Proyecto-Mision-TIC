@@ -102,7 +102,7 @@ const handleFecha =  ()=>{
           </Col>
         </Row>
 
-        <Row className="justify-content-center mb-4">
+        <Row className="justify-content-center">
           <Col md="1">
             <Form.Label className="title">Estado</Form.Label>
           </Col>
