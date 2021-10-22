@@ -6,7 +6,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-
+import { useState } from "react";
 import Home from './home/pages/Home';
 import Managment from './product-managment/pages/Managment';
 import Registration from './product-managment/pages/Registration';
@@ -14,16 +14,21 @@ import SManagment from './sales-managment/pages/Smanagment';
 import SRegistration from './sales-managment/pages/Sregistration';
 import UManagment from './user-managment/pages/Usmanagment';
 import Header from './shared/Header';
+import imgGLogin from "./home/pages/img/logo192.png"
 
 
 const App= () => {
+  const [nombre, setNombre] = useState("");
+  const [profilePic, setProfilePic] = useState(imgGLogin);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div style={{}}>
     <Router>
-      <Header />
+      <Header nombre={nombre} profilePic={profilePic}/>
     <Switch>
       <Route path="/" exact>
-        <Home />
+        <Home setNombre={setNombre} setProfilePic={setProfilePic} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} />
       </Route>
       <Route path="/product/managment" exact>
         <Managment />

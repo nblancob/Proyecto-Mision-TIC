@@ -12,7 +12,7 @@ const Sregistration = () => {
 
   const handleClic = () => {
     if (ventaID !== "") {
-      const editVenta = ventas.find(venta => venta._id == ventaID);
+      const editVenta = ventas.find(venta => venta._id === ventaID);
       editVenta.Estado = ventaState;
       console.log(editVenta);
 
