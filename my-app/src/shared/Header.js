@@ -16,11 +16,12 @@ const Header =({nombre, profilePic})=>{
                             <Nav.Link as={Link} to="/user/managment" style={{color: 'white'}}>Usuario</Nav.Link>
                             <Nav.Link as={Link} to="/sale/registration" style={{color: 'white'}}>Ventas</Nav.Link>
                             <Nav.Link as={Link} to="/product/managment" style={{color: 'white'}}>Productos</Nav.Link>
-                            <Nav.Link as={Link} to="/sale/managment" style={{color: 'white'}}>Administrador de Ventas</Nav.Link>
-                            </Nav>
+                        </Nav>
                 </Container>
                 <h5 className="text-center me-2">{nombre}</h5>                       
+                <Link to="/">
                 <Image src={profilePic} className="me-4" width="40" height="40" roundedCircle/>
+                </Link>
             </Navbar>
         </div>
     );

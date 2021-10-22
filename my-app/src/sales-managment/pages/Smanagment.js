@@ -4,8 +4,8 @@ import Tablev from '../components/Table';
 const Smanagment = () =>{
     return(
         <div style={{management}}>
-            <h4 className="title">
-                Administrador de Ventas
+            <h4 className="title text-center mt-5 mb-2">
+               CREAR VENTAS
             </h4>
             <Tablev/>
         </div>
