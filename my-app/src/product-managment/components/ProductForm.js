@@ -3,12 +3,14 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/Form";
 
 const Newproduct = ({ formValue, handleChange }) => {
-  let disp = "1";
-  if (formValue.state === true) {
-    disp = "1";
-  } else {
-    disp = "2";
-  }
+  const handleValue = (formValue) => {
+    if (formValue.state === true) {
+      return "true";
+    } else {
+      return "false";
+    }
+  };
+
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -51,10 +53,10 @@ const Newproduct = ({ formValue, handleChange }) => {
           name="state"
           aria-label="Default select example"
           onChange={handleChange}
-          value={disp}
+          value={handleValue(formValue)}
         >
-          <option value="1">Disponible</option>
-          <option value="2">No disponible</option>
+          <option value="true">Disponible</option>
+          <option value="false">No disponible</option>
         </Form.Select>
       </Form.Group>
     </Form>

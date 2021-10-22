@@ -9,15 +9,16 @@ exports.getUsers = (req, res) => {
 
 // Actualizar un usuario
 exports.updateOneUsers = (req, res) => {
-  Users.findOne({ Id_User: req.body.Id_User }).then((findOne) => {
+  Users.findOne({ Id_User: req.body.id_User }).then((findOne) => {
     if (findOne) {
       const updateUser = new Users({
-        Id_User: req.body.Id_User,
-        Nombre: req.body.Nombre,
-        Rol: req.body.Rol,
-        Estado: req.body.Estado,
+        id_User: req.body.id_User,
+        nombre: req.body.nombre,
+        correo: req.body.correo,
+        rol: req.body.rol,
+        estado: req.body.estado,
       });
-      Users.findByIdAndUpdate({ Id_User: req.body.Id_User }, updateUser).then(
+      Users.findByIdAndUpdate({ id_User: req.body.id_User }, updateUser).then(
         (productoResult) => {
           res.status(200).json("Usuario Actualizado");
         }
@@ -30,15 +31,16 @@ exports.updateOneUsers = (req, res) => {
 
 // Añadir un usuario nuevo
 exports.addUsers = (req, res) => {
-  Users.findOne({ Nombre: req.body.Nombre }).then((findOne) => {
+  Users.findOne({ nombre: req.body.nombre }).then((findOne) => {
     if (findOne) {
       res.status(200).json("Usuario ya existe");
     } else {
       const addUser = new Users({
-        Id_User: req.body.Id_User,
-        Nombre: req.body.Nombre,
-        Rol: req.body.Rol,
-        Estado: "Inactivo",
+        id_User: req.body.id_User,
+        nombre: req.body.nombre,
+        correo: req.body.correo,
+        rol: req.body.rol,
+        estado: false,
       });
       addUser.save().then((UserAdded) => {
         res.status(200).json("Usuario Creado");
@@ -48,9 +50,9 @@ exports.addUsers = (req, res) => {
 };
 // Borrar Usuario por Nombre
 exports.removeUsers = (req, res) => {
-  Users.findOne({ Nombre: req.body.Nombre }).then((findOne) => {
+  Users.findOne({ nombre: req.body.nombre }).then((findOne) => {
     if (findOne) {
-      Users.deleteOne({ Nombre: req.body.Nombre }).then((UserRemoved) => {
+      Users.deleteOne({ nombre: req.body.nombre }).then((UserRemoved) => {
         res.status(200).json("Usuario Borrado");
       });
     } else {
