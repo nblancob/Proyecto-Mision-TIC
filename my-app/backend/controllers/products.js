@@ -12,9 +12,14 @@ exports.addProducts = (req, res) => {
     price: req.body.price,
     state: req.body.state,
   });
-  productAdd.save().then((createdProduct) => {
-    res.status(201).json("creado satisfactoriamente");
-  });
+  productAdd
+    .save()
+    .then((createdProduct) => {
+      res.status(201).json("creado satisfactoriamente");
+    })
+    .catch((error) => {
+      res.status(500).json("No se pudo agregar el producto debido a que la id ya existe");
+    });
 };
 
 exports.getProductId = (req, res) => {
@@ -47,7 +52,8 @@ exports.editProduct = (req, res) => {
       res.status(200).json("El producto se actualizó satisfactoriamente");
     })
     .catch((error) => {
-      console.log("catching error");
-      res.status(500).json("Ya existe esta ID");
+      res
+        .status(500)
+        .json("No se pudo actualizar el producto debido a que la id ya existe");
     });
 };
