@@ -3,14 +3,14 @@ import tablep from "./tablep.css";
 import Button from "react-bootstrap/Button";
 import api from "../../Api";
 import Modal from "react-bootstrap/Modal";
-import { Alert } from "reactstrap";
 import { useState, useEffect } from "react";
 import ProductForm from "./ProductForm";
 import { Link, useHistory } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
 
-const Tablep = ({ productos , setProductos}) => {
+const Tablep = ({ productos, setProductos }) => {
   const history = useHistory();
-  const [error, setError] = useState();
+  const [variant, setVariant] = useState(" ");
   const [productID, setproductID] = useState("");
   const [success, setSuccess] = useState();
   const [modalInsertar, setmodalInsertar] = useState(false);
@@ -38,15 +38,20 @@ const Tablep = ({ productos , setProductos}) => {
 
   const handleChange = (event) => {
     setNewProduct({ ...newProduct, [event.target.name]: event.target.value });
+    if (event.target.value === "true") {
+      setNewProduct({ ...newProduct, state: true });
+    } else if (event.target.value === "false") {
+      setNewProduct({ ...newProduct, state: false });
+    }
   };
 
   const editProduct = async () => {
     const apiResponse = await api.products.edit(newProduct);
-    if (apiResponse.err) {
-      setError(apiResponse.err.message);
-      console.log(apiResponse.err);
+    setSuccess(apiResponse);
+    if (apiResponse === "El producto se actualizó satisfactoriamente") {
+      setVariant("success");
     } else {
-      setSuccess(apiResponse);
+      setVariant("danger");
     }
     setNewProduct({
       _id: " ",
@@ -63,7 +68,7 @@ const Tablep = ({ productos , setProductos}) => {
     const newState = productos.filter(
       (productos) => productos._id !== event.target.id
     );
-      setProductos(newState)
+    setProductos(newState);
   };
 
   return (
@@ -106,6 +111,7 @@ const Tablep = ({ productos , setProductos}) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
+                      fill= "white"
                       className="bi bi-pencil"
                       viewBox="0 0 16 16"
                     >
@@ -129,6 +135,7 @@ const Tablep = ({ productos , setProductos}) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
+                      fill= "white"
                       className="bi bi-trash"
                       viewBox="0 0 16 16"
                     >
@@ -150,32 +157,29 @@ const Tablep = ({ productos , setProductos}) => {
         </tbody>
       </Table>
       <Link to="/product/registration">
-      <Button
-        className="btn-add font-family"
-        variant="outline-success"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          fill="currentColor"
-          className="bi bi-plus"
-          viewBox="0 0 20 20"
-        >
-          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-        </svg>
-        Agregar producto
-      </Button>
+        <Button className="btn-add font-family" variant="outline-success">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className="bi bi-plus"
+            viewBox="0 0 20 20"
+          >
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+          </svg>
+          Agregar producto
+        </Button>
       </Link>
       <Modal show={modalInsertar}>
         <Modal.Header className="Modal-Header font-link">
           <Modal.Title>EDITAR PRODUCTO</Modal.Title>
         </Modal.Header>
-        {error && <Alert variant="danger">{error}</Alert>}
-        {success && <Alert variant="success">{success} </Alert>}
+        {success && <Alert variant={variant}>{success} </Alert>}
         <Modal.Body>
           <ProductForm
             formValue={newProduct}
+            setFormvalue={setNewProduct}
             handleChange={handleChange}
             edit={editProduct}
           />

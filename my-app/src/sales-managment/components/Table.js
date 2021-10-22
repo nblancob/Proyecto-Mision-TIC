@@ -3,13 +3,14 @@ import Table from "react-bootstrap/Table";
 import Trash from "../../product-managment/components/Trash";
 import Pencil from "../../product-managment/components/Pencil";
 import management from "../pages/Management.css";
+import { Link } from 'react-router-dom';
 import {
   Button,
   Modal,
   ModalBody,
   ModalHeader,
   FormGroup,
-  ModalFooter,
+  ModalFooter
 } from "reactstrap";
 
 /*test Data for CRUD */
@@ -46,14 +47,20 @@ class table extends Component {
       <div className="container">
         <div style={{ management }}>
           <Button
-            className="boton mb-2"
+            className="boton mb-2 float-end"
             onClick={() => this.mostrarModalInsertar()}
           >
             Insertar nueva Venta
           </Button>
+          <Link to="/sale/managment">
+          <Button className="boton mb-2 me-2 float-end">
+            Actualizar Estado
+          </Button>
+          </Link>
+          
         </div>
 
-        <Table class="table">
+        <Table className="table">
           <thead>
             <tr>
               <th scope="col">Id Venta</th>

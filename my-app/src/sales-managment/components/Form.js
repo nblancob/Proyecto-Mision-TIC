@@ -1,11 +1,11 @@
 import Form from "react-bootstrap/Form";
 import "./Form.css";
 
-const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => {
+const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct, ventaState, handleVentaState }) => {
 
   return (
     <Form onReset={editProduct} className="container font-link">
-      <Form.Group controlId="formGridAddress1">
+      <Form.Group controlId="formGridAddress1" className="mb-2 mt-2">
         <Form.Label>Fecha:</Form.Label>
         <Form.Control
           type="date"
@@ -17,7 +17,7 @@ const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => 
       <Form.Label>ID Venta:</Form.Label>
       <Form.Group
         direction="horizontal"
-        className="mb-4"
+        className="mb-2 mt-0"
         controlId="formGridAddress2"
       >
         <Form.Control
@@ -29,7 +29,7 @@ const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct }) => 
 
       <Form.Group controlId="formGridState">
         <Form.Label>Estado:</Form.Label>
-        <Form.Select defaultValue="Elegir...">
+        <Form.Select defaultValue={ventaState} onChange={handleVentaState}> 
           <option>Elegir...</option>
           <option>ACTIVA</option>
           <option>PREPARADA</option>

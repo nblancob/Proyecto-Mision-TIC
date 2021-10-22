@@ -28,7 +28,7 @@ const UserTable = () => {
           </tr>
         </tbody>
       </Table>
-      <Button variant="primary" type="submit" className="float-end">
+      <Button variant="primary" type="submit" className="mt-2 float-end">
         Actualizar
       </Button>
     </div>
