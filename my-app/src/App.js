@@ -37,10 +37,11 @@ const App= () => {
         <Registration />
       </Route>
       <Route path="/sale/managment" exact>
-        <SManagment />
+        <SRegistration />
       </Route>
       <Route path="/sale/registration" exact>
-        <SRegistration />
+        <SManagment />
+        
       </Route>
       <Route path="/user/managment" exact>
         <UManagment />

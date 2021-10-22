@@ -111,6 +111,7 @@ const Tablep = ({ productos, setProductos }) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
+                      fill= "white"
                       className="bi bi-pencil"
                       viewBox="0 0 16 16"
                     >
@@ -134,6 +135,7 @@ const Tablep = ({ productos, setProductos }) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
+                      fill= "white"
                       className="bi bi-trash"
                       viewBox="0 0 16 16"
                     >

@@ -18,12 +18,10 @@ const Home = ({setNombre, setProfilePic, setIsLoggedIn, isLoggedIn}) => {
             src={Imglogin}
             className="image align-self-center"
           />
-          {/* <a href='https://www.freepik.es/fotos/madera'>Foto de Madera creado por jcomp - www.freepik.es</a> */}
+          
           <Card.Body>
-            <Card.Text>
-                <Card.Title className="title_card ">Ingresa con Google</Card.Title>
-             <GoogleLogInOut setNombre={setNombre} setProfilePic={setProfilePic} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>
-              </Card.Text>
+            <Card.Title className="title_card text-white">Ingresa con Google</Card.Title>
+            <GoogleLogInOut setNombre={setNombre} setProfilePic={setProfilePic} setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn}/>
           </Card.Body>
         </Card>
       </div>

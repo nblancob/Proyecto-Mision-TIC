@@ -5,7 +5,7 @@ const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct, venta
 
   return (
     <Form onReset={editProduct} className="container font-link">
-      <Form.Group controlId="formGridAddress1">
+      <Form.Group controlId="formGridAddress1" className="mb-2 mt-2">
         <Form.Label>Fecha:</Form.Label>
         <Form.Control
           type="date"
@@ -17,7 +17,7 @@ const FormSales = ({ date, handleDate, ventaID, handleVentaID,editProduct, venta
       <Form.Label>ID Venta:</Form.Label>
       <Form.Group
         direction="horizontal"
-        className="mb-4"
+        className="mb-2 mt-0"
         controlId="formGridAddress2"
       >
         <Form.Control
