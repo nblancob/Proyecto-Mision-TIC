@@ -18,7 +18,7 @@ const Header =({nombre, profilePic})=>{
                             <Nav.Link as={Link} to="/product/managment" style={{color: 'white'}}>Productos</Nav.Link>
                         </Nav>
                 </Container>
-                <h5 className="text-center me-2">{nombre}</h5>                       
+                <h8 className="text-center me-2">{nombre}</h8>                       
                 <Link to="/">
                 <Image src={profilePic} className="me-4" width="40" height="40" roundedCircle/>
                 </Link>
