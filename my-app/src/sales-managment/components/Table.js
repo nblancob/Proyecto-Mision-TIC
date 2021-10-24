@@ -15,7 +15,7 @@ import {
 } from "reactstrap";
 
 /*test Data for CRUD */
-const url = "http://localhost:3000/api/salesManagment";
+const url = "http://localhost:3001/api/salesManagment";
 
 class table extends Component {
   constructor(props) {

@@ -62,11 +62,29 @@ exports.getUsers = (req, res) => {
 // };
 // Buscar Usuario por correo
 exports.getByemail = (req, res) => {
-  Users.findOne({Correo: req.body.Correo}).then((Userfind) => {
+  Users.findOne({ Correo: req.userData.Correo }).then((Userfind) => {
     if (Userfind) {
-      res.status(200).json(Userfind); 
+      if (Userfind.Estado) {
+        res.status(200).json("activo");
+      } else {
+        res.status(200).json("inactivo");
+      }
     } else {
-      res.status(401).json("El usuario no existe");
+      const newUser = new Users({
+        Nombre: req.userData.Nombre,
+        Correo: req.userData.Correo,
+        Rol: "null",
+        Estado: false,
+      });
+      newUser.save().then((user) => {
+        res.status(200).json("Usuario creado");
+      });
     }
+  });
+};
+
+exports.validateAdm = (req, res) => {
+  Users.findOne({ Correo: req.userData.Correo }).then((Userfind) => {
+    res.status(200).json(Userfind.Rol);
   });
 };

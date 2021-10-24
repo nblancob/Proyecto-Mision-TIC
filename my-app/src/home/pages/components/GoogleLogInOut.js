@@ -1,7 +1,9 @@
 import GoogleLogin from "react-google-login";
-import { GoogleLogout } from "react-google-login";
 import imgGLogin from "../img/logo192.png";
 import home from "../Home.css";
+import Button from "@restart/ui/esm/Button";
+import { useEffect } from "react";
+import api from "../../../Api";
 
 const GoogleLogInOut = ({
   setNombre,
@@ -9,29 +11,74 @@ const GoogleLogInOut = ({
   setIsLoggedIn,
   isLoggedIn,
 }) => {
-  const Login = (res) => {
-    
-    
-    setNombre(res.profileObj.givenName);
-    setProfilePic(res.profileObj.imageUrl);
-    setIsLoggedIn(true);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const name = localStorage.getItem("name");
+    const ProfilePic = localStorage.getItem("ProfilePic");
+    if (token === null) {
+      setIsLoggedIn(false);
+    } else {
+      setIsLoggedIn(true);
+      setNombre(name);
+      setProfilePic(ProfilePic);
+    }
+  });
+
+  const Login = (response) => {
+    localStorage.setItem("token", response.tokenId);
+
+    api.user.getUser().then((res) => {
+      if (res === "activo") {
+        localStorage.setItem("name", response.profileObj.givenName);
+        localStorage.setItem("ProfilePic", response.profileObj.imageUrl);
+        setNombre(response.profileObj.givenName);
+        setProfilePic(response.profileObj.imageUrl);
+        setIsLoggedIn(true);
+      } else if (res === "inactivo") {
+        setIsLoggedIn(false);
+        localStorage.removeItem("token");
+      } else {
+        console.log("usuario creado pero sin rol");
+        localStorage.setItem("name", response.profileObj.givenName);
+        localStorage.setItem("ProfilePic", response.profileObj.imageUrl);
+        setNombre(response.profileObj.givenName);
+        setProfilePic(response.profileObj.imageUrl);
+      }
+    });
   };
 
   const LoginError = (err) => {
     console.error(err);
   };
 
-  const logout = (res) => {
+  const Logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("ProfilePic");
     setNombre("");
     setProfilePic(imgGLogin);
     setIsLoggedIn(false);
   };
 
-  if (isLoggedIn === false) {
+  if (isLoggedIn) {
+    return (
+      <div>
+        <Button
+          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+          buttonText="Logout"
+          className="Google-btn"
+          style={{ home }}
+          onClick={Logout}
+        >
+          Logout
+        </Button>
+      </div>
+    );
+  } else {
     return (
       <div>
         <GoogleLogin
-          clientId="377435207139-t6jli9d6u42heij1jk11if8heb52fvpu.apps.googleusercontent.com"
+          clientId="96617027916-7u84fd75j683njsglsuavbt1fgqdn773.apps.googleusercontent.com"
           buttonText="Login"
           className="Google-btn"
           style={{ home }}
@@ -39,18 +86,6 @@ const GoogleLogInOut = ({
           onFailure={LoginError}
           cookiePolicy={"single_host_origin"}
         />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <GoogleLogout
-          clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-          buttonText="Logout"
-          className="Google-btn"
-          style={{ home }}
-          onLogoutSuccess={logout}
-        ></GoogleLogout>
       </div>
     );
   }

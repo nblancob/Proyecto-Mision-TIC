@@ -12,3 +12,16 @@
     color: white;
 }
 
+.list{
+    list-style: none;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    margin-right: 1%;
+}
+.text-name{
+    font-size: 80%;
+}
+.text-rol{
+    color: rgb(29, 41, 105);
+}
+
