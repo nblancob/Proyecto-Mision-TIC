@@ -10,17 +10,21 @@ const GoogleLogInOut = ({
   setProfilePic,
   setIsLoggedIn,
   isLoggedIn,
+  setRol,
 }) => {
   useEffect(() => {
+    const ProfilePic = localStorage.getItem("ProfilePic");
+    const rol = localStorage.getItem("rol");
     const token = localStorage.getItem("token");
     const name = localStorage.getItem("name");
-    const ProfilePic = localStorage.getItem("ProfilePic");
+
     if (token === null) {
       setIsLoggedIn(false);
     } else {
       setIsLoggedIn(true);
       setNombre(name);
       setProfilePic(ProfilePic);
+      setRol(rol);
     }
   });
 
@@ -28,17 +32,18 @@ const GoogleLogInOut = ({
     localStorage.setItem("token", response.tokenId);
 
     api.user.getUser().then((res) => {
-      if (res === "activo") {
+      if (res.Estado === true) {
         localStorage.setItem("name", response.profileObj.givenName);
         localStorage.setItem("ProfilePic", response.profileObj.imageUrl);
+        localStorage.setItem("rol", res.Rol);
         setNombre(response.profileObj.givenName);
         setProfilePic(response.profileObj.imageUrl);
+        setRol(res.Rol);
         setIsLoggedIn(true);
       } else if (res === "inactivo") {
         setIsLoggedIn(false);
         localStorage.removeItem("token");
       } else {
-        console.log("usuario creado pero sin rol");
         localStorage.setItem("name", response.profileObj.givenName);
         localStorage.setItem("ProfilePic", response.profileObj.imageUrl);
         setNombre(response.profileObj.givenName);
@@ -55,6 +60,7 @@ const GoogleLogInOut = ({
     localStorage.removeItem("token");
     localStorage.removeItem("name");
     localStorage.removeItem("ProfilePic");
+    localStorage.removeItem("rol");
     setNombre("");
     setProfilePic(imgGLogin);
     setIsLoggedIn(false);

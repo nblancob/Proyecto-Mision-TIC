@@ -5,11 +5,10 @@ import api from "../../Api";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import ProductForm from "./ProductForm";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 
 const Tablep = ({ productos, setProductos }) => {
-  const history = useHistory();
   const [variant, setVariant] = useState(" ");
   const [productID, setproductID] = useState("");
   const [success, setSuccess] = useState();
@@ -45,11 +44,16 @@ const Tablep = ({ productos, setProductos }) => {
     }
   };
 
+  const edit = () => {
+    const index = productos.findIndex((producto) => producto._id === productID);
+    productos[index] = newProduct;
+  };
   const editProduct = async () => {
     const apiResponse = await api.products.edit(newProduct);
     setSuccess(apiResponse);
     if (apiResponse === "El producto se actualizó satisfactoriamente") {
       setVariant("success");
+      edit();
     } else {
       setVariant("danger");
     }
@@ -111,7 +115,7 @@ const Tablep = ({ productos, setProductos }) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
-                      fill= "white"
+                      fill="white"
                       className="bi bi-pencil"
                       viewBox="0 0 16 16"
                     >
@@ -135,7 +139,7 @@ const Tablep = ({ productos, setProductos }) => {
                       width="16"
                       height="16"
                       fillRule="currentColor"
-                      fill= "white"
+                      fill="white"
                       className="bi bi-trash"
                       viewBox="0 0 16 16"
                     >
@@ -191,7 +195,6 @@ const Tablep = ({ productos, setProductos }) => {
           <Button
             variant="danger"
             onClick={() => {
-              history.go(0);
               setmodalInsertar(false);
             }}
           >

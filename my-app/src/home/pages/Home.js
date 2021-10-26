@@ -3,7 +3,6 @@ import home from "./Home.css";
 import Imglogin from "./img/Imglogin.jpg";
 import GoogleLogInOut from "./components/GoogleLogInOut";
 import { useEffect } from "react";
-import api from "../../Api";
 
 const Home = ({
   setNombre,
@@ -16,19 +15,16 @@ const Home = ({
     const token = localStorage.getItem("token");
     const name = localStorage.getItem("name");
     const ProfilePic = localStorage.getItem("ProfilePic");
+    const rol = localStorage.getItem("rol");
 
     if (token === null) {
       setIsLoggedIn(false);
-      setRol(" ")
+      setRol(" ");
     } else {
       setIsLoggedIn(true);
       setNombre(name);
       setProfilePic(ProfilePic);
-      const fetchData = async () => {
-        const response = await api.user.validateAdm();
-        setRol(response);
-      };
-      fetchData();
+      setRol(rol);
     }
   });
 
@@ -54,6 +50,7 @@ const Home = ({
               setProfilePic={setProfilePic}
               setIsLoggedIn={setIsLoggedIn}
               isLoggedIn={isLoggedIn}
+              setRol={setRol}
             />
           </Card.Body>
         </Card>

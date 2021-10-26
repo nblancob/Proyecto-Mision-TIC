@@ -4,9 +4,9 @@ const UserController = require("../controllers/users");
 const auth = require("../middleware/auth");
 
 router.get("", auth, UserController.getByemail);
-router.get("", UserController.getUsers);
+router.get("/getid/:id", UserController.getUserId);
+router.get("/list", UserController.getUsers);
 router.get("/validate", auth, UserController.validateAdm);
-// router.post("", UserController.addUsers);
-// router.post("", UserController.updateOneUsers);
-// router.delete("", UserController.removeUsers);
+router.put("/:id", UserController.editUsers);
+router.delete("/:id", UserController.delete);
 module.exports = router;

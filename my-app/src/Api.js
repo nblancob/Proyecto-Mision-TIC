@@ -13,11 +13,28 @@ const CallApi = async (url, options = {}) => {
 
 const api = {
   user: {
+    list() {
+      return CallApi("/users/list");
+    },
     getUser() {
       return CallApi("/users");
     },
+    getUserId(id) {
+      return CallApi(`/users/getid/${id}`);
+    },
+    delete(id) {
+      return CallApi(`/users/${id}`, {
+        method: "DELETE",
+      });
+    },
     validateAdm() {
       return CallApi("/users/validate");
+    },
+    edit(data) {
+      return CallApi(`/users/${data._id}`, {
+        method: "PUT",
+        body: JSON.stringify(data),
+      });
     },
   },
   products: {

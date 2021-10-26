@@ -16,8 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/products", productsRoute);
 app.use("/api/sales", salesRoute);
 app.use("/api/users", usersRoute);
-app.use("/api/salesManagment",salesManagment);
-
+app.use("/api/salesManagment", salesManagment);
 
 app.use(express.static("./public"));
 //Database
