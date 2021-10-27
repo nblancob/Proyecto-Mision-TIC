@@ -1,0 +1,40 @@
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card{
+    width: 40%;
+    height: fit-content;
+    background: linear-gradient(53deg, #aad0f1,#64b5f6,#2196f3);
+    box-shadow: 10px 5px 5px black;
+    border-radius: 2%;
+    margin-bottom: 0;
+    
+}
+.card:hover{
+    background: linear-gradient(123.61deg, #c06e8d -1.85%, #9982ca 47.63%, #6fa5af 100%) no-repeat fixed;
+
+}
+.text-center{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 1%;
+}
+.image{
+   border-radius: 2%;
+   align-items: center;
+   width: 90%;
+   margin-top: 2%;
+   margin-bottom: 2%;
+   box-shadow: 5px 5px 5px black;
+}
+.Google-btn{
+    margin-top: 3%;
+    width: 100%;
+}
+.title_card{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}

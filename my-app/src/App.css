@@ -1,0 +1,8 @@
+body,html{
+    background-color: #0091AD;
+    background-image: url(./shared/img/background.jpg);
+    background-attachment: fixed;
+    background-size:cover;   
+    background-position: 100%;
+}
+

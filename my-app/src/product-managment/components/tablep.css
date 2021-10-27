@@ -1,0 +1,37 @@
+body,html{
+    height: 100%;
+}
+.Tablep{
+    margin-top: 10%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+.Input-search{
+    margin-top: 5%;
+    width: 70%;
+}
+.Trash-btn{
+    background-color: #b7094c;
+   
+}
+.Pencil-btn{
+    background-color: #0091ad;
+}
+.Info-btn{
+    background-color: #5c4d7d;
+}
+.Modal-Header{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: linear-gradient(53deg, #5794c0,#8874df,#bd6796);
+    font-weight: bold;
+}
+.font-link{
+    font-family: 'Inter',sans-serif;
+    color: white;
+}
+.btn-add{
+    font-weight: bold;
+}
