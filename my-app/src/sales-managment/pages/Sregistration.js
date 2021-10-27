@@ -15,7 +15,6 @@ const Sregistration = () => {
     if (ventaID !== "") {
       const editVenta = ventas.find(venta => venta._id === ventaID);
       editVenta.Estado = ventaState;
-      console.log(editVenta);
 
       fetch("http://localhost:3000/api/sales/edit/" + ventaID, {
         method: 'PUT', 

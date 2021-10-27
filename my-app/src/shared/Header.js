@@ -19,7 +19,7 @@ const Header =({nombre, profilePic,rol})=>{
                         </Nav>
                 </Container>
                 <ul className="list">
-                    <li className="text-name">{nombre}</li>
+                    <span className="text-name">{nombre}</span>
                     <li className="text-rol">{rol}</li>
                 </ul>
                                  
