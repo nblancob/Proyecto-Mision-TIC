@@ -4,9 +4,8 @@ var mongoose = require("mongoose");
 const productsRoute = require("./routes/products");
 const salesRoute = require("./routes/sales");
 const usersRoute = require("./routes/users");
-
+require("dotenv").config();
 const salesManagment = require("./routes/salesManagment");
-const URL =":v";
 const cors = require("cors");
 
 //Middlewares
@@ -20,5 +19,7 @@ app.use("/api/salesManagment", salesManagment);
 
 app.use(express.static("./public"));
 //Database
-mongoose.connect(URL).then((db) => console.log("DB is connected"));
+mongoose
+  .connect(process.env.MONGOOSE_CONNECT)
+  .then((db) => console.log("DB is connected"));
 module.exports = app;
