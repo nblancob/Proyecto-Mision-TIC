@@ -16,7 +16,7 @@ const Sregistration = () => {
       const editVenta = ventas.find(venta => venta._id === ventaID);
       editVenta.Estado = ventaState;
 
-      fetch("http://localhost:3000/api/sales/edit/" + ventaID, {
+      fetch("https://misionticsoft-backend.herokuapp.com/api/sales/edit/" + ventaID, {
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json'
